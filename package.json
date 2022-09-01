@@ -1,8 +1,8 @@
 {
   "name": "ofm-dropdown",
-  "version": "1.0.0",
+  "version": "1.0.04",
   "description": "Script for setting up dropdown menus",
-  "main": "./src/dropdown.js",
+  "main": "dropdown.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
