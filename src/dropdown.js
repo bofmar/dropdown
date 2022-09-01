@@ -5,7 +5,6 @@ export default function dropdown(identifier, menuIdentifier) {
 
     let currentDropdown;
     if (isDropdownButton) {
-      console.log(e.target.nextElementSibling);
       currentDropdown = e.target.nextElementSibling;
       currentDropdown.classList.toggle("active-dropdown");
     }

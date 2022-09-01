@@ -1,52 +1,98 @@
 @use "./colors" as c;
+@use "./fonts" as f;
 @use "./reset";
 
-body{
+body {
   background-color: c.$clr-bg;
   display: grid;
   place-items: center;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
-button{
+button {
   all: initial;
   color: inherit;
   cursor: pointer;
 }
 
-nav{
+nav {
   display: flex;
+  align-items: center;
+  padding: 0.75rem 2rem;
   gap: 8rem;
+  font-family: f.$popins;
 
   background-color: black;
   color: white;
 
-  .link-wrapper{
+  .link-wrapper {
     display: flex;
     gap: 2rem;
+    font-size: 1.2rem;
 
-    .dropdown{
+    button {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .dropdown {
       position: relative;
 
-      .dropdown-menu{
+      button {
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 0.35rem solid transparent;
+          border-right: 0.35rem solid transparent;
+          border-top: 0.35rem solid white;
+
+          position: absolute;
+          text-align: center;
+          top: 45%;
+          left: 110%;
+        }
+
+        &::before{
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+
+          background-color: red;
+          transform: skew(-25deg);
+          z-index: -1;
+        }
+      }
+
+      .dropdown-menu {
         position: absolute;
-        left:0;
+        left: 0;
         top: calc(100% - 0.25rem);
         visibility: hidden;
+        text-align: right;
+        padding: 1rem;
         transform: translateY(-0.25em);
         transition: all 250ms ease-in-out;
 
         pointer-events: none;
       }
 
-      .active-dropdown{
+      .active-dropdown {
         visibility: visible;
-        transform: translate(0);
-
+        transform: translateY(0.75em);
+        
         pointer-events: auto;
+
+        background-color: black;
+
       }
     }
   }
