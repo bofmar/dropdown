@@ -1,0 +1,9 @@
+@use "./colors" as c;
+@use "./reset";
+
+body{
+  background-color: c.$clr-bg;
+  display: grid;
+  place-items: center;
+}
+
