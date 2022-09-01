@@ -7,3 +7,43 @@ body{
   place-items: center;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+button{
+  all: initial;
+  color: inherit;
+  cursor: pointer;
+}
+
+nav{
+  display: flex;
+  gap: 8rem;
+
+  background-color: black;
+  color: white;
+
+  .link-wrapper{
+    display: flex;
+    gap: 2rem;
+
+    .dropdown{
+      position: relative;
+
+      .dropdown-menu{
+        position: absolute;
+        left:0;
+        top: calc(100% - 0.25rem);
+        visibility: hidden;
+        transform: translateY(-0.25em);
+        transition: all 250ms ease-in-out;
+      }
+
+      .droppable:focus + .dropdown-menu{
+        visibility: visible;
+        transform: translate(0);
+      }
+    }
+  }
+}
