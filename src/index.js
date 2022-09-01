@@ -1,5 +1,4 @@
-import "./styles/index.scss";
-import dropdown from "./dropdown";
+import './styles/index.scss';
+import dropdown from './dropdown';
 
-console.log("this works");
-dropdown("droppable","dropdown-menu");
+dropdown('droppable', 'dropdown-menu');
