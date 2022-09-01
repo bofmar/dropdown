@@ -38,11 +38,15 @@ nav{
         visibility: hidden;
         transform: translateY(-0.25em);
         transition: all 250ms ease-in-out;
+
+        pointer-events: none;
       }
 
-      .droppable:focus + .dropdown-menu{
+      .active-dropdown{
         visibility: visible;
         transform: translate(0);
+
+        pointer-events: auto;
       }
     }
   }
